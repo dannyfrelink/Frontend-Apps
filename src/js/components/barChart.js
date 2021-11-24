@@ -5,9 +5,9 @@ import * as d3 from "d3";
 function BarChart({ data }) {
     const ref = useD3(
         (svg) => {
-            const height = 500;
-            const width = 500;
-            const margin = { top: 20, right: 30, bottom: 30, left: 40 };
+            const margin = { top: 40, right: 20, bottom: 20, left: 120 };
+            const height = 750 - margin.top - margin.bottom;
+            const width = 1500 - margin.left - margin.right;
 
             const x = d3
                 .scaleBand()
@@ -21,39 +21,25 @@ function BarChart({ data }) {
                 .rangeRound([height - margin.bottom, margin.top]);
 
             const xAxis = (g) =>
-                g.attr("transform", `translate(0,${height - margin.bottom})`).call(
-                    d3
-                        .axisBottom(x)
-                        .tickValues(
-                            d3
-                                .ticks(...d3.extent(x.domain()), width / 40)
-                                .filter((v) => x(v) !== undefined)
-                        )
-                        .tickSizeOuter(0)
-                );
+                g
+                    .attr("transform", `translate(0,${height - margin.bottom})`)
+                    .style("color", "#61dafb")
+                    .call(d3.axisBottom()
+                        .scale(x));
 
             const y1Axis = (g) =>
                 g
                     .attr("transform", `translate(${margin.left},0)`)
-                    .style("color", "#440099")
-                    .call(d3.axisLeft(y1).ticks(null, "s"))
-                    .call((g) => g.select(".domain").remove())
-                    .call((g) =>
-                        g
-                            .append("text")
-                            .attr("x", -margin.left)
-                            .attr("y", 10)
-                            .attr("fill", "currentColor")
-                            .attr("text-anchor", "start")
-                            .text(data.y1)
-                    );
+                    .style("color", "#61dafb")
+                    .call(d3.axisLeft()
+                        .scale(y1));
 
             svg.select(".x-axis").call(xAxis);
             svg.select(".y-axis").call(y1Axis);
 
             svg
                 .select(".plot-area")
-                .attr("fill", "#6b09df")
+                .attr("fill", "#61dafb")
                 .selectAll(".bar")
                 .data(data)
                 .join("rect")
@@ -70,7 +56,7 @@ function BarChart({ data }) {
         <svg
             ref={ref}
             style={{
-                height: 500,
+                height: 750,
                 width: "100%",
                 marginRight: "0px",
                 marginLeft: "0px"
