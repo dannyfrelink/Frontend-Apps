@@ -10,23 +10,21 @@ function App() {
     getData().then(data => setJson(data))
   })
 
-  const currenciesEU = json?.EU.map(d => d.currency)
+  // const currenciesEU = json?.EU.map(d => d.currency)
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        {/* <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p> */}
-        {json?.EU && <BarChart data={json?.EU} />}
-        {/* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
+    <div className='App'>
+      <header className='App-header'>
+        <h1>Currencies compared to &euro;1</h1>
+        <p>Filter on continent:</p>
+        <form>
+          <label><input type='radio' name='filter' value='EU' id='filter' checked />Europe</label>
+          <label><input type='radio' name='filter' value='NA' id='filter' />North America</label>
+          <label><input type='radio' name='filter' value='SA' id='filter' />South America</label>
+          <label><input type='radio' name='filter' value='AF' id='filter' />Africa</label>
+          <label><input type='radio' name='filter' value='AS' id='filter' />Asia</label>
+          <label><input type='radio' name='filter' value='OC' id='filter' />Oceania</label>
+        </form>
+        {json?.EU && <BarChart data={json?.AS} />}
       </header>
     </div>
   );
