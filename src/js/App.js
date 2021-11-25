@@ -1,4 +1,4 @@
-import logo from '.././logo.svg';
+// import logo from '.././logo.svg';
 import '../scss/App.scss';
 import { useEffect, useState } from 'react';
 import getData from './components/currencyData.js';
@@ -10,21 +10,24 @@ function App() {
     getData().then(data => setJson(data))
   })
 
-  // const currenciesEU = json?.EU.map(d => d.currency)
+  const [selectedFilter, setselectedFilter] = useState('EU')
+  const onRadioButtonChange = e => {
+    setselectedFilter(e.currentTarget.value)
+  }
   return (
     <div className='App'>
       <header className='App-header'>
         <h1>Currencies compared to &euro;1</h1>
         <p>Filter on continent:</p>
         <form>
-          <label><input type='radio' name='filter' value='EU' id='filter' checked />Europe</label>
-          <label><input type='radio' name='filter' value='NA' id='filter' />North America</label>
-          <label><input type='radio' name='filter' value='SA' id='filter' />South America</label>
-          <label><input type='radio' name='filter' value='AF' id='filter' />Africa</label>
-          <label><input type='radio' name='filter' value='AS' id='filter' />Asia</label>
-          <label><input type='radio' name='filter' value='OC' id='filter' />Oceania</label>
+          <label><input type='radio' name='filter' value='EU' id='filter' checked={selectedFilter === 'EU'} onChange={onRadioButtonChange} />Europe</label>
+          <label><input type='radio' name='filter' value='NA' id='filter' checked={selectedFilter === 'NA'} onChange={onRadioButtonChange} />North America</label>
+          <label><input type='radio' name='filter' value='SA' id='filter' checked={selectedFilter === 'SA'} onChange={onRadioButtonChange} />South America</label>
+          <label><input type='radio' name='filter' value='AF' id='filter' checked={selectedFilter === 'AF'} onChange={onRadioButtonChange} />Africa</label>
+          <label><input type='radio' name='filter' value='AS' id='filter' checked={selectedFilter === 'AS'} onChange={onRadioButtonChange} />Asia</label>
+          <label><input type='radio' name='filter' value='OC' id='filter' checked={selectedFilter === 'OC'} onChange={onRadioButtonChange} />Oceania</label>
         </form>
-        {json?.EU && <BarChart data={json?.AS} />}
+        {json?.EU && <BarChart selectedChart={selectedFilter} data={json.EU} />}
       </header>
     </div>
   );
