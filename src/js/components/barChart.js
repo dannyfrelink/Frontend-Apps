@@ -42,8 +42,6 @@ function BarChart({ data }) {
                     rect_enter.append('title')
                     return rect_enter
                 })
-
-            rect
                 .attr('height', yScale.bandwidth())
                 .attr('y', (d) => yScale(d.currency))
                 .transition()

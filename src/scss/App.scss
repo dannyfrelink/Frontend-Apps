@@ -3,12 +3,21 @@
 }
 
 .App-header {
-  background-color: grey;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
+
+rect {
+  fill: indigo;
+  fill-opacity: 0.7;
+
+  &:hover {
+    fill-opacity: 1;
+  }
+}
+
