@@ -2,7 +2,6 @@ import '../scss/App.scss';
 import { useEffect, useState } from 'react';
 import getData from './components/currencyData.js';
 import BarChart from './components/barChart';
-import { select } from 'd3-selection';
 
 function App() {
   const [json, setJson] = useState(null);
