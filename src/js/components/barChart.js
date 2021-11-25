@@ -2,7 +2,7 @@ import useD3 from '../hooks/useD3';
 import React from 'react'
 import * as d3 from 'd3';
 
-function BarChart({ data, selectedFilter }) {
+function BarChart({ data }) {
     const margin = { top: 40, right: 20, bottom: 20, left: 120 };
     const height = 750 - margin.top - margin.bottom;
     const width = 1500 - margin.left - margin.right;
@@ -54,7 +54,7 @@ function BarChart({ data, selectedFilter }) {
             rect.select('title')
                 .text((d) => d.currency);
         },
-        [data.length, selectedFilter]
+        [data.length]
     );
 
     return (

@@ -1,8 +1,8 @@
-// import logo from '.././logo.svg';
 import '../scss/App.scss';
 import { useEffect, useState } from 'react';
 import getData from './components/currencyData.js';
 import BarChart from './components/barChart';
+import { select } from 'd3-selection';
 
 function App() {
   const [json, setJson] = useState(null);
@@ -11,9 +11,10 @@ function App() {
   })
 
   const [selectedFilter, setselectedFilter] = useState('EU')
-  const onRadioButtonChange = e => {
+  function onRadioButtonChange(e) {
     setselectedFilter(e.currentTarget.value)
   }
+
   return (
     <div className='App'>
       <header className='App-header'>
@@ -27,7 +28,7 @@ function App() {
           <label><input type='radio' name='filter' value='AS' id='filter' checked={selectedFilter === 'AS'} onChange={onRadioButtonChange} />Asia</label>
           <label><input type='radio' name='filter' value='OC' id='filter' checked={selectedFilter === 'OC'} onChange={onRadioButtonChange} />Oceania</label>
         </form>
-        {json?.EU && <BarChart selectedChart={selectedFilter} data={json.EU} />}
+        {json?.EU && <BarChart data={json[selectedFilter]} />}
       </header>
     </div>
   );
