@@ -22,13 +22,12 @@ function BarChart({ data }) {
             const xAxis = d3.axisTop().scale(xScale);
             const yAxis = d3.axisLeft().scale(yScale);
 
-            const g = svg
+            svg
                 .select('g')
                 .attr('transform', `translate(${margin.left},${margin.top})`)
-                .attr('class', 'chart');
-
-            const g_xAxis = g.append('g').attr('class', 'x-axis');
-            const g_yAxis = g.append('g').attr('class', 'y-axis');
+                .attr('class', 'chart')
+                .append('g').attr('class', 'x-axis')
+                .append('g').attr('class', 'y-axis');
 
             svg.select('.x-axis').call(xAxis);
             svg.select('.y-axis').call(yAxis);
