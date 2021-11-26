@@ -39,16 +39,7 @@ function getData() {
             const asianCurrencies = sortCurrencies('AS');
             const oceanianCurrencies = sortCurrencies('OC');
 
-            // Return data from API per continent (without undefined)
-            // return {
-            //     'EU': filterContinents(data, europeanCurrencies).filter(d => !!d),
-            //     'SA': filterContinents(data, southAmericanCurrencies).filter(d => !!d),
-            //     'NA': filterContinents(data, northAmericanCurrencies).filter(d => !!d),
-            //     'AF': filterContinents(data, africanCurrencies).filter(d => !!d),
-            //     'AS': filterContinents(data, asianCurrencies).filter(d => !!d),
-            //     'OC': filterContinents(data, oceanianCurrencies).filter(d => !!d)
-            // }
-
+            // Resolve data from API per continent (without undefined)
             resolve({
                 'EU': filterContinents(data, europeanCurrencies).filter(d => !!d),
                 'SA': filterContinents(data, southAmericanCurrencies).filter(d => !!d),
