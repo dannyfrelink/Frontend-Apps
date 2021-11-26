@@ -35,5 +35,21 @@
   }
 }
 
+#tooltip {
+  position: absolute;
+  font-size: 0.8em;
+  text-align: center;
+  background-color: papayawhip;
+  box-shadow: 1px 1px 1px 1px grey;
+  border-radius: 5px;
+  padding: 8px;
 
+  p {
+    margin: 0;
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
 

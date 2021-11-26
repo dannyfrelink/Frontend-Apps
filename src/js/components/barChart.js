@@ -33,6 +33,25 @@ function BarChart({ data }) {
             svg.select('.x-axis').call(xAxis);
             svg.select('.y-axis').call(yAxis);
 
+            function onMouseMove(d, data) {
+                const xPosition = d.clientX;
+                const yPosition = d.clientY;
+
+                d3.select('#tooltip')
+                    .classed('hidden', false)
+                    .style('left', xPosition + -40 + 'px')
+                    .style('top', yPosition + -40 + 'px')
+
+                d3.select('#content')
+                    .classed('hidden', false)
+                    .text(`${data.currency}: ${data.value}`)
+            }
+
+            function onMouseOut() {
+                d3.select('#tooltip').classed('hidden', true)
+                d3.select('#content').classed('hidden', true)
+            }
+
             const rect = svg
                 .select('.chart')
                 .selectAll('rect')
@@ -42,6 +61,8 @@ function BarChart({ data }) {
                     rect_enter.append('title')
                     return rect_enter
                 })
+                .on('mousemove', onMouseMove)
+                .on('mouseout', onMouseOut)
                 .attr('height', yScale.bandwidth())
                 .attr('y', (d) => yScale(d.currency))
                 .transition()
