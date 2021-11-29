@@ -53,3 +53,11 @@
   opacity: 0;
 }
 
+.worldmap>* {
+  fill: indigo;
+  fill-opacity: 0.7;
+
+  &:hover {
+    fill-opacity: 1;
+  }
+}
