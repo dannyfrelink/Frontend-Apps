@@ -27,9 +27,9 @@ function App() {
           <label><input type='radio' name='filter' value='AS' id='filter' checked={selectedFilter === 'AS'} onChange={onRadioButtonChange} />Asia</label>
           <label><input type='radio' name='filter' value='OC' id='filter' checked={selectedFilter === 'OC'} onChange={onRadioButtonChange} />Oceania</label>
         </form> */}
-      <div className='hidden' id='tooltip'>
+      {/* <div className='hidden' id='tooltip'>
         <p className='hidden' id='content'></p>
-      </div>
+      </div> */}
       {/* {json?.EU && <BarChart data={json[selectedFilter]} />} */}
 
       <WorldMap />
