@@ -1,14 +1,14 @@
 import '../scss/App.scss';
-import { useEffect, useState } from 'react';
-import getData from './modules/currencyData.js';
+// import { useEffect, useState } from 'react';
+// import getData from './modules/currencyData.js';
 // import BarChart from './components/BarChart';
 import WorldMap from './components/WorldMap';
 
 function App() {
-  const [json, setJson] = useState(null);
-  useEffect(() => {
-    getData().then(data => setJson(data))
-  })
+  // const [json, setJson] = useState(null);
+  // useEffect(() => {
+  //   getData().then(data => setJson(data))
+  // })
 
   // const [selectedFilter, setselectedFilter] = useState('EU')
   // function onRadioButtonChange(e) {
