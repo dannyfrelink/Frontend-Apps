@@ -10,15 +10,14 @@ function App() {
     getData().then(data => setJson(data))
   })
 
-  const [selectedFilter, setselectedFilter] = useState('EU')
-  function onRadioButtonChange(e) {
-    setselectedFilter(e.currentTarget.value)
-  }
+  // const [selectedFilter, setselectedFilter] = useState('EU')
+  // function onRadioButtonChange(e) {
+  //   setselectedFilter(e.currentTarget.value)
+  // }
 
   return (
     <div className='App'>
-      <header className='App-header'>
-        {/* <h1>Currencies compared to &euro;1</h1>
+      {/* <h1>Currencies compared to &euro;1</h1>
         <p>Filter on continent:</p>
         <form>
           <label><input type='radio' name='filter' value='EU' id='filter' checked={selectedFilter === 'EU'} onChange={onRadioButtonChange} />Europe</label>
@@ -28,13 +27,12 @@ function App() {
           <label><input type='radio' name='filter' value='AS' id='filter' checked={selectedFilter === 'AS'} onChange={onRadioButtonChange} />Asia</label>
           <label><input type='radio' name='filter' value='OC' id='filter' checked={selectedFilter === 'OC'} onChange={onRadioButtonChange} />Oceania</label>
         </form> */}
-        <div className='hidden' id='tooltip'>
-          <p className='hidden' id='content'></p>
-        </div>
-        {/* {json?.EU && <BarChart data={json[selectedFilter]} />} */}
+      <div className='hidden' id='tooltip'>
+        <p className='hidden' id='content'></p>
+      </div>
+      {/* {json?.EU && <BarChart data={json[selectedFilter]} />} */}
 
-        <WorldMap />
-      </header>
+      <WorldMap />
     </div>
   );
 }
