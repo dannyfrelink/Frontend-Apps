@@ -1,16 +1,7 @@
-import { useEffect, useState } from 'react';
-import getData from '../modules/currencyData.js';
-import BarChart from './BarChart.js';
-
-function WorldMap() {
-    const [json, setJson] = useState(null);
-    useEffect(() => {
-        getData().then(data => setJson(data))
-    })
-
+function WorldMap({ onContinentChange }) {
     function onClick(e) {
-        console.log(json[e.currentTarget.dataset.continent])
-        json?.EU && <BarChart data={json[e.currentTarget.dataset.continent]} />
+        const continentId = e.currentTarget.dataset.continent
+        onContinentChange(continentId)
     }
     // SVG created by potrace 1.7, written by Peter Selinger 2001-2005
     return (
