@@ -15,8 +15,6 @@ function App() {
     getData().then(data => setJson(data))
   })
 
-  const barData = json?.EU && currentId ? json[currentId] : null
-
   return (
     <div className='App'>
       <h1>Currencies compared to &euro;1</h1>
@@ -25,7 +23,7 @@ function App() {
       </div> */}
       <WorldMap onContinentChange={onContinentChange} />
 
-      {barData && <BarChart data={barData} />}
+      {json?.EU && currentId ? <BarChart data={json[currentId]} /> : null}
     </div>
   );
 }
