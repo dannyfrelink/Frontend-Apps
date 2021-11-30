@@ -6,7 +6,7 @@ function WorldMap({ onContinentChange }) {
     // SVG created by potrace 1.7, written by Peter Selinger 2001-2005
     return (
         <svg className="worldmap" version="1.0" xmlns="http://www.w3.org/2000/svg" width="100%"
-            height="750px" viewBox="0 0 468 239"
+            height="50vw" viewBox="0 0 468 239"
             preserveAspectRatio="xMidYMid meet">
             <g className="africa" transform="translate(0,239) scale(0.016963,-0.016963)"
                 fill="#000000" stroke="none">
