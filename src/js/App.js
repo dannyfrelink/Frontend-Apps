@@ -18,9 +18,10 @@ function App() {
   return (
     <div className='App'>
       <h1>Currencies compared to &euro;1</h1>
-      {/* <div className='hidden' id='tooltip'>
+      <div className='hidden' id='tooltip'>
         <p className='hidden' id='content'></p>
-      </div> */}
+      </div>
+
       <WorldMap onContinentChange={onContinentChange} />
 
       {json?.EU && currentId ? <BarChart data={json[currentId]} /> : null}

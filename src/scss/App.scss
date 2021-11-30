@@ -17,9 +17,24 @@
       fill-opacity: 1;
     }
   }
+  
+  .worldmap {
+    max-height: 750px;
+
+    >* {
+      fill: indigo;
+      fill-opacity: 0.7;
+    
+      &:hover {
+        fill-opacity: 1;
+        cursor: pointer;
+      }
+    }
+  }
 
   #tooltip {
     position: absolute;
+    z-index: 1;
     font-size: 0.8em;
     text-align: center;
     background-color: papayawhip;
@@ -35,22 +50,12 @@
   .hidden {
     opacity: 0;
   }
-  
-  .worldmap {
-    max-height: 750px;
 
-    >* {
-      fill: indigo;
-      fill-opacity: 0.7;
-    
-      &:hover {
-        fill-opacity: 1;
-        cursor: pointer;
-      }
-    }
+  .barchart {
+    position: absolute;
+    height: 750px;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
   }
-  
-
-  
 }
-

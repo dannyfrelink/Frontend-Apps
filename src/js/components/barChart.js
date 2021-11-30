@@ -7,15 +7,21 @@ function BarChart({ data }) {
     const height = 750 - margin.top - margin.bottom;
     const width = 1500 - margin.left - margin.right;
 
+    const values = data.map(d => d.value)
+    const average = Math.round(values.reduce((a, b) => a + b, 0) / (values.length + 100))
+
+    const highestNumbers = data.filter((d) => d.value >= average)
+
     const ref = useD3(
         (svg) => {
             const xScale = d3
                 .scaleLinear()
-                .domain([0, d3.max(data, (d) => d.value)])
+                .domain([0, d3.max(highestNumbers, (d) => d.value
+                )])
                 .range([0, width]);
             const yScale = d3
                 .scaleBand()
-                .domain(data.map((d) => d.currency))
+                .domain(highestNumbers.map((d) => d.currency))
                 .rangeRound([0, height])
                 .paddingInner(0.15);
 
@@ -54,7 +60,7 @@ function BarChart({ data }) {
             const rect = svg
                 .select('.chart')
                 .selectAll('rect')
-                .data(data, d => d.name)
+                .data(highestNumbers, d => d.name)
                 .join(enter => {
                     const rect_enter = enter.append('rect').attr('x', 0)
                     rect_enter.append('title')
@@ -72,20 +78,14 @@ function BarChart({ data }) {
             rect.select('title')
                 .text((d) => d.currency);
         },
-        [data.length]
+        [highestNumbers.length]
     );
 
     return (
         <svg
+            className="barchart"
             ref={ref}
-            style={{
-                height: 750,
-                width: '100%',
-                marginRight: '0px',
-                marginLeft: '0px'
-            }}
         >
-            <g className='plot-area' />
             <g className='x-axis' />
             <g className='y-axis' />
         </svg >
