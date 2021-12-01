@@ -24,7 +24,7 @@ function WorldMap({ onContinentChange, data }) {
             .style('top', yPosition + -40 + 'px');
 
         const values = dataSet.map(d => d.value);
-        const average = Math.round(values.reduce((a, b) => a + b, 0) / (values.length + 100));
+        const average = Math.round(values.reduce((a, b) => a + b, 0) / (values.length));
 
         d3.select('#content')
             .classed('hidden', false)
