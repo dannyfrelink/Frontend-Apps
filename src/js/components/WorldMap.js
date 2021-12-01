@@ -7,6 +7,8 @@ function WorldMap({ onContinentChange, data }) {
         onContinentChange(continentId);
 
         d3.select('.close').style('display', 'block')
+        d3.select('.worldmap')
+            .style('filter', 'blur(5px)')
     }
 
     function onMouseMove(d) {
