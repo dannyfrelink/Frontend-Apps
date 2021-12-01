@@ -6,14 +6,14 @@ function WorldMap({ onContinentChange, data }) {
         const continentId = d.currentTarget.dataset.continent;
         onContinentChange(continentId);
 
-        d3.select('.close').style('display', 'block')
+        d3.select('.close').style('display', 'block');
         d3.select('.worldmap')
-            .style('filter', 'blur(5px)')
+            .style('filter', 'blur(5px)');
     }
 
     function onMouseMove(d) {
         const continentId = d.currentTarget.dataset.continent;
-        const dataSet = data[continentId]
+        const dataSet = data[continentId];
 
         const xPosition = d.clientX;
         const yPosition = d.clientY;
@@ -23,8 +23,8 @@ function WorldMap({ onContinentChange, data }) {
             .style('left', xPosition + -90 + 'px')
             .style('top', yPosition + -40 + 'px');
 
-        const values = dataSet.map(d => d.value)
-        const average = Math.round(values.reduce((a, b) => a + b, 0) / (values.length + 100))
+        const values = dataSet.map(d => d.value);
+        const average = Math.round(values.reduce((a, b) => a + b, 0) / (values.length + 100));
 
         d3.select('#content')
             .classed('hidden', false)

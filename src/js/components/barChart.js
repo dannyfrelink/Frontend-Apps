@@ -8,9 +8,9 @@ function BarChart({ data }) {
     const height = 375 - margin.top - margin.bottom;
     const width = 750 - margin.left - margin.right;
 
-    const values = data.map(d => d.value)
-    const average = Math.round(values.reduce((a, b) => a + b, 0) / (values.length + 100))
-    const highestValues = data.filter((d) => d.value >= average)
+    const values = data.map(d => d.value);
+    const average = Math.round(values.reduce((a, b) => a + b, 0) / (values.length + 100));
+    const highestValues = data.filter((d) => d.value >= average);
 
     const ref = useD3(
         (svg) => {

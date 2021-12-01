@@ -7,12 +7,12 @@ import WorldMap from './components/WorldMap';
 function App() {
   const [currentId, setCurrentId] = useState(null);
   const onContinentChange = (id) => {
-    setCurrentId(id)
+    setCurrentId(id);
   }
 
   const [json, setJson] = useState(null);
   useEffect(() => {
-    getData().then(data => setJson(data))
+    getData().then(data => setJson(data));
   })
 
   return (
