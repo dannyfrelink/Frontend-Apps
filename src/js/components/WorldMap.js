@@ -2,21 +2,19 @@ import * as d3 from 'd3';
 import { onMouseOut } from '../modules/hover.js';
 
 function WorldMap({ onContinentChange, data }) {
-    function onClick(e) {
-        const continentId = e.currentTarget.dataset.continent;
+    function onClick(d) {
+        const continentId = d.currentTarget.dataset.continent;
         onContinentChange(continentId);
 
         d3.select('.close').style('display', 'block')
     }
 
-    function onMouseMove(e) {
-        const continentId = e.currentTarget.dataset.continent;
+    function onMouseMove(d) {
+        const continentId = d.currentTarget.dataset.continent;
         const dataSet = data[continentId]
 
-        console.log(e)
-
-        const xPosition = e.clientX;
-        const yPosition = e.clientY;
+        const xPosition = d.clientX;
+        const yPosition = d.clientY;
 
         d3.select('#tooltip')
             .classed('hidden', false)
