@@ -54,8 +54,42 @@
   .barchart {
     position: absolute;
     height: 375px;
-    width: 100%;
+    width: 750px;
     margin-right: 0;
     margin-left: 0;
+    transform: translate(28vw, 40px);
+    background-color: white;
+
+    .chart {
+      transform: translate(40px, 40px);
+    }
   }
+}
+
+.close {
+  position: absolute;
+  right: 28vw;
+  top: 45px;
+  width: 32px;
+  height: 32px;
+  z-index: 1;
+  opacity: 0.5;
+  display: none;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: black;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
 }

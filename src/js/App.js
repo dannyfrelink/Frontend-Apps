@@ -24,6 +24,7 @@ function App() {
 
       <WorldMap onContinentChange={onContinentChange} />
 
+      <a href="/" class="close"></a>
       {json?.EU && currentId ? <BarChart data={json[currentId]} /> : null}
     </div>
   );

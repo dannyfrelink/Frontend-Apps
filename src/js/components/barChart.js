@@ -29,7 +29,6 @@ function BarChart({ data }) {
 
             svg
                 .select('g')
-                .attr('transform', `translate(${margin.left},${margin.top})`)
                 .attr('class', 'chart')
                 .append('g').attr('class', 'x-axis')
                 .append('g').attr('class', 'y-axis');
