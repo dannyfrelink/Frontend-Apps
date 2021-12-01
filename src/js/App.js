@@ -22,10 +22,10 @@ function App() {
         <p className='hidden' id='content'></p>
       </div>
 
-      <WorldMap onContinentChange={onContinentChange} />
+      {json ? <WorldMap onContinentChange={onContinentChange} data={json} /> : null}
 
       <a href="/" class="close"></a>
-      {json?.EU && currentId ? <BarChart data={json[currentId]} /> : null}
+      {json && currentId ? <BarChart data={json[currentId]} /> : null}
     </div>
   );
 }
