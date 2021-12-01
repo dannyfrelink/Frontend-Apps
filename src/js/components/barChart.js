@@ -9,18 +9,18 @@ function BarChart({ data }) {
 
     const values = data.map(d => d.value)
     const average = Math.round(values.reduce((a, b) => a + b, 0) / (values.length + 100))
-    const highestNumbers = data.filter((d) => d.value >= average)
+    const highestValues = data.filter((d) => d.value >= average)
 
     const ref = useD3(
         (svg) => {
             const xScale = d3
                 .scaleLinear()
-                .domain([0, d3.max(highestNumbers, (d) => d.value
+                .domain([0, d3.max(highestValues, (d) => d.value
                 )])
                 .range([0, width]);
             const yScale = d3
                 .scaleBand()
-                .domain(highestNumbers.map((d) => d.currency))
+                .domain(highestValues.map((d) => d.currency))
                 .rangeRound([0, height])
                 .paddingInner(0.15);
 
@@ -58,7 +58,7 @@ function BarChart({ data }) {
             const rect = svg
                 .select('.chart')
                 .selectAll('rect')
-                .data(highestNumbers, d => d.name)
+                .data(highestValues, d => d.name)
                 .join(enter => {
                     const rect_enter = enter.append('rect').attr('x', 0)
                     rect_enter.append('title')
@@ -76,7 +76,7 @@ function BarChart({ data }) {
             rect.select('title')
                 .text((d) => d.currency);
         },
-        [highestNumbers.length]
+        [highestValues.length]
     );
 
     return (
