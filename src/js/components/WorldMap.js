@@ -9,7 +9,8 @@ function WorldMap({ onContinentChange, data }) {
 
         d3.select('.close').style('display', 'block');
         d3.select('.worldmap')
-            .style('filter', 'blur(5px)');
+            .style('filter', 'blur(5px)')
+            .style('pointer-events', 'none');
     }
 
     // Activates on hover continent
