@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Frontend-Apps
+Welcome to the Readme for my repository for Frontend-Apps. You can find alle the information about the content inside this repository and how to transfer it to your own PC.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📋 Table of Contents
 
-## Available Scripts
+* [Concept](https://github.com/dannyfrelink/Frontend-Apps#-concept)
+* [Process (Wiki)](https://github.com/dannyfrelink/Frontend-Apps#%EF%B8%8F-process-wiki)
+* [Wishlist](https://github.com/dannyfrelink/Frontend-Apps#-wishlist)
+* [Installation](https://github.com/dannyfrelink/Frontend-Apps#-installation)
+* [License](https://github.com/dannyfrelink/Frontend-Apps#-license)
 
-In the project directory, you can run:
+## 💡 Concept
 
-### `npm start`
+Following on my bar chart I've created for [Frontend-Data](https://github.com/dannyfrelink/frontendData), I'm converting my code to fit a REACT App. After converting my old code, I was looking for a way to extend my code by adding another visualisation.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Since I wanted to make some form of geo visualisation in one of the previous subjects, I figured this was the right time to try it out. I grabbed a SVG of the world and added it to a new REACT component. Each continent is interactive and by clicking you get to see an overlay with the barchart. In the barchart you can see the highest values of the currencies in that specific continent.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+IMAGE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-### `npm test`
+## ⚙️ Process (Wiki)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can find all the progression of my work documented in my [Wiki](https://github.com/dannyfrelink/Frontend-Apps/wiki).
 
-### `npm run build`
+## 📝 Wishlist
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Since everything worked out pretty decent, there is not much I didn't get the change to try. I've created an interactive worldmap, which was my personal goal for the previous subjects. It's fair to say that I'm very excited for it to work as I wanted it to do. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🔧 Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If you're looking to use my code for yourself, you can clone this GitHub repository:
+```
+git clone https://github.com/dannyfrelink/Frontend-Apps
+```
 
-### `npm run eject`
+You then need to install all NPM packages:
+```
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Start the REACT App with the following command:
+```
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📄 License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I have used the [MIT License](https://github.com/dannyfrelink/Frontend-Apps/blob/main/LICENSE) for this repository.
