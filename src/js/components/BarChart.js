@@ -4,14 +4,17 @@ import * as d3 from 'd3';
 import { onMouseMove, onMouseOut } from '../modules/hover.js';
 
 function BarChart({ data }) {
+    // create basic variables
     const margin = { top: 40, right: 20, bottom: 20, left: 120 };
     const height = 375 - margin.top - margin.bottom;
     const width = 750 - margin.left - margin.right;
 
+    // Filters out only the highest values for the data
     const values = data.map(d => d.value);
     const average = Math.round(values.reduce((a, b) => a + b, 0) / (values.length + 100));
     const highestValues = data.filter((d) => d.value >= average);
 
+    // Creation of the bar chart
     const ref = useD3(
         (svg) => {
             const xScale = d3

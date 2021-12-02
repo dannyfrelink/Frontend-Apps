@@ -2,6 +2,7 @@ import * as d3 from 'd3';
 import { onMouseOut } from '../modules/hover.js';
 
 function WorldMap({ onContinentChange, data }) {
+    // Activates on click on continent
     function onClick(d) {
         const continentId = d.currentTarget.dataset.continent;
         onContinentChange(continentId);
@@ -11,6 +12,7 @@ function WorldMap({ onContinentChange, data }) {
             .style('filter', 'blur(5px)');
     }
 
+    // Activates on hover continent
     function onMouseMove(d) {
         const continentId = d.currentTarget.dataset.continent;
         const dataSet = data[continentId];

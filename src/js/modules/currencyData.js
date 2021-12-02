@@ -3,6 +3,7 @@ const countries = Object.values(countriesList.countries);
 
 function getData() {
     return new Promise((resolve) => {
+        // Fetch the data from API
         fetch('https://exchangerate-api.p.rapidapi.com/rapid/latest/EUR', {
             'method': 'GET',
             'headers': {
