@@ -4,7 +4,7 @@ import * as d3 from 'd3';
 import { onMouseMove, onMouseOut } from '../modules/hover.js';
 
 function BarChart({ data }) {
-    // create basic variables
+    // Create basic variables
     const margin = { top: 40, right: 20, bottom: 20, left: 120 };
     const height = 375 - margin.top - margin.bottom;
     const width = 750 - margin.left - margin.right;
@@ -68,9 +68,10 @@ function BarChart({ data }) {
         <svg
             className="barchart"
             ref={ref}
+            viewBox="0 0 750 375"
+            preserveAspectRatio="xMidYMid meet"
         >
             <g className='x-axis' />
-            <g className='y-axis' />
         </svg >
     );
 }

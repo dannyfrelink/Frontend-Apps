@@ -55,8 +55,8 @@
     position: absolute;
     right: 28vw;
     top: 185px;
-    width: 32px;
-    height: 32px;
+    width: 2vw;
+    height: 2vw;
     z-index: 1;
     opacity: 0.5;
     display: none;
@@ -66,10 +66,10 @@
   }
   .close:before, .close:after {
     position: absolute;
-    left: 15px;
+    left: 0.9vw;
     content: ' ';
-    height: 33px;
-    width: 2px;
+    height: 2vw;
+    width: 0.12vw;
     background-color: black;
   }
   .close:before {
@@ -81,8 +81,8 @@
 
   .barchart {
     position: absolute;
-    height: 375px;
-    width: 750px;
+    height: 22.5vw;
+    width: 44.5vw;
     margin-right: 0;
     margin-left: 0;
     transform: translate(28vw, 180px);
