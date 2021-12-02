@@ -31,6 +31,7 @@ function App() {
         {/* Creates anchor for close button overlay */}
         <a href='/' class='close'></a>
 
+        {/* Title in the overlay */}
         <h2>Currencies with the highest value in {currentId} </h2>
 
         {/* Shows BarChart if json and currentId is loaded */}
