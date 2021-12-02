@@ -15,7 +15,8 @@ Following on my bar chart I've created for [Frontend-Data](https://github.com/da
 
 Since I wanted to make some form of geo visualisation in one of the previous subjects, I figured this was the right time to try it out. I grabbed a SVG of the world and added it to a new REACT component. Each continent is interactive and by clicking you get to see an overlay with the barchart. In the barchart you can see the highest values of the currencies in that specific continent.
 
-IMAGE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+![Wereldkaart](https://github.com/dannyfrelink/Frontend-Apps/blob/main/src/images/wereldkaart.png)
+![Bar Chart](https://github.com/dannyfrelink/Frontend-Apps/blob/main/src/images/barchart.png)
 
 ## ⚙️ Process (Wiki)
 
