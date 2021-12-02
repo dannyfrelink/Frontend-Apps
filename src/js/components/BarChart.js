@@ -35,7 +35,7 @@ function BarChart({ data }) {
                 .select('g')
                 .attr('class', 'chart')
                 .append('g').attr('class', 'x-axis')
-                .append('g').attr('class', 'y-axis');
+                .append('g').attr('class', 'y-axis')
 
             svg.select('.x-axis').call(xAxis);
             svg.select('.y-axis').call(yAxis);
@@ -66,7 +66,6 @@ function BarChart({ data }) {
 
     return (
         <svg
-            className="barchart"
             ref={ref}
             viewBox="0 0 750 375"
             preserveAspectRatio="xMidYMid meet"

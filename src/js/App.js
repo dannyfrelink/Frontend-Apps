@@ -27,11 +27,15 @@ function App() {
       {/* Shows WorldMap if json is loaded */}
       {json ? <WorldMap onContinentChange={onContinentChange} data={json} /> : null}
 
-      {/* Creates anchor for close button overlay */}
-      <a href="/" class="close"></a>
+      <div className='barchart'>
+        {/* Creates anchor for close button overlay */}
+        <a href='/' class='close'></a>
 
-      {/* Shows BarChart if json and currentId is loaded */}
-      {json && currentId ? <BarChart data={json[currentId]} /> : null}
+        <h2>Currencies with the highest value in {currentId} </h2>
+
+        {/* Shows BarChart if json and currentId is loaded */}
+        {json && currentId ? <BarChart data={json[currentId]} /> : null}
+      </div>
     </div>
   );
 }

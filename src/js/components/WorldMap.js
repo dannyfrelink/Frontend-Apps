@@ -7,6 +7,7 @@ function WorldMap({ onContinentChange, data }) {
         const continentId = d.currentTarget.dataset.continent;
         onContinentChange(continentId);
 
+        d3.select('.barchart').style('display', 'block');
         d3.select('.close').style('display', 'block');
         d3.select('.worldmap')
             .style('filter', 'blur(5px)')
